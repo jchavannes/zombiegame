@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Zombie Game</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <link rel='stylesheet' href='style.css'>
+    <script type='text/javascript' src='lib/jquery.min.js'></script>
+    <script type='text/javascript' src='lib/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='game.js'></script>
+</head>
+<body>
+<div class='world'>
+    <div class='buildings'></div>
+    <div class='dude'>
+        <div class='body'>
+            <div class='flame'></div>
+            <div class='freeze'></div>
+        </div>
+        <div class='nametag'>
+            <p>Player</p>
+            <div class='health'><div class='percent'></div><div class='amount'>100</div></div>
+        </div>
+    </div>
+    <div class='clickarrows'></div>
+    <div class='errormsg'></div>
+    <div class='actionbar'>
+        <a class='fire'>
+            <span>1</span>
+            <div>
+                <h4>Fire</h4>
+                <p>
+                    <i>Damage:</i> 25<br/>
+                    <i>Cast time:</i> 1.5s<br/>
+                    <i>Cooldown:</i> None<br/>
+                    <i>Distance:</i> 450
+                </p>
+            </div>
+        </a><a class='freeze'>
+            <span>2</span>
+            <div>
+                <h4>Freeze</h4>
+                <p>
+                    <i>Damage:</i> 10<br/>
+                    <i>Cast time:</i> Instant<br/>
+                    <i>Cooldown:</i> 25s<br/>
+                    <i>Distance:</i> 400
+                </p>
+            </div>
+        </a><a></a><a></a><a></a>
+    </div>
+    <div class='castbar'><div class='percent'></div></div>
+</div>
+</body>
+</html>

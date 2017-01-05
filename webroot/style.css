@@ -1,0 +1,237 @@
+html {
+	overflow: hidden;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background: #000;
+	margin: 0px;
+}
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 12px 0px;
+}
+.world {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 3500px;
+	height: 2500px;
+	background: #fff;
+	background: url(img/game.jpg);
+}
+.world ::selection,
+.world ::moz-selection {
+	background: transparent;
+}
+
+.world .dude, .world .zombie {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 20px;
+	height: 40px;
+	padding: 20px;
+}
+.world .zombie {
+	cursor: pointer;
+}
+.world .dude .body, .world .zombie .body {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 20px;
+	height: 35px;
+	background: url(img/dudesprites.png) 0px 0px;	
+}
+.world .dude .character_highlight, .world .zombie .character_highlight {
+	position: absolute;
+	bottom: 17px;
+	left: 15px;
+	width: 30px;
+	height: 20px;
+	background: url(img/character_highlight.png) no-repeat;
+}
+.world .dude .nametag, .world .zombie .nametag {
+	position: absolute;
+	text-align: center;
+	width: 100px;
+	top: -15px;
+	left: -18px;
+	color: #fff;
+	font-size: 12px;
+}
+.world .dude .nametag {
+	opacity: 0.75;
+	text-shadow: 0px 1px 5px rgba(0,0,0,1);
+}
+.nametag p {
+	margin: 0px;
+}
+.nametag .health {
+	position: relative;
+	width: 100px;
+	height: 12px;
+	margin: 3px -1px 0px;
+	background: #d8d8d8;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+.nametag .health .percent {
+	width: 100px;
+	height: 12px;
+	background: #0ace00;
+}
+.nametag .health .amount {
+	color: #fff;
+	position: absolute;
+	width: 100px;
+	top: 0px;
+	font-size: 10px;
+	text-shadow: 0px 1px 5px rgba(0,0,0,1);
+}
+.world .flame {
+	display: none;
+	width: 20px;
+	height: 25px;
+	background: url(img/flamesprite.png);
+	position: absolute;
+	left: 10px;
+}
+.world .facingLeft .flame {
+	left: -8px;
+}
+.world .dude .freeze,
+.world .zombie .freeze {
+	display: none;
+	width: 400px;
+	height: 400px;
+	background: url(img/freezesprites.png);
+	position: absolute;
+	left: -190px;
+	top: -170px;
+}
+.world .zombie .freeze {
+	display: none;
+}
+
+.world .object {
+	position: absolute;
+	width: 130px;
+	height: 160px;
+	background: #000;
+}
+
+.world .buildings {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 3500px;
+	height: 2500px;
+}
+.world .buildings img {
+	position: absolute;
+	display: block;
+}
+.world .castbar {
+	position: fixed;
+	display: none;
+	bottom: 90px;
+	left: 50%;
+	margin-left: -130px;
+	width: 250px;
+	height: 20px;
+	padding: 5px;
+	border: 1px solid #fff;
+}
+.world .castbar .percent {
+	background: #009;
+	width: 100%;
+	height: 20px;
+}
+.world .errormsg {
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	width: 100%;
+}
+.world .errormsg p {
+	width: 400px;
+	margin: 0px auto;
+	text-align: center;
+	color: #f00;
+}
+.world .corpse {
+	position: absolute;
+	width: 32px;
+	height: 13px;
+	background: url(img/corpse.png);
+}
+.world .corpse.active {
+	cursor: pointer;
+}
+.world .clickarrows {
+	display: none;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 1200px;
+	left: 400px;
+	background: url(img/clickarrows.png);
+}
+.world .actionbar {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -138px;
+	width: 275px;
+	height: 55px;
+	opacity: 0.75;
+}
+.world .actionbar a {
+	position: relative;
+	display: inline-block;
+	*display:inline;zoom:1;
+	vertical-align: top;
+	width: 55px;
+	height: 55px;
+	background: rgba(100,100,100,0.75) url(img/actionbar.png);
+	cursor: pointer;
+}
+.world .actionbar a.active, .world .actionbar a:active {
+	background-position: -55px 0px;
+}
+.world .actionbar a span {
+	display: block;
+	width: 49px;
+	height: 49px;
+	position: absolute;
+	color: #fff;
+	padding: 3px;
+}
+.world .actionbar a.fire span {
+	background: url(img/actionbar.png) -110px 0px;
+}
+.world .actionbar a.freeze span {
+	background: url(img/actionbar.png) -165px 0px;
+}
+.world .actionbar a div {
+	position: absolute;
+	display: none;
+	bottom: 65px;
+	left: 10px;
+	background: rgba(255,255,255,0.9);
+	border: 3px solid #fff;
+	padding: 0px 12px;
+	white-space: nowrap;
+	min-width: 150px;
+	font-weight: 700;
+}
+.world .actionbar a:hover div {
+	display: block;
+}
+.world .actionbar a div h4 {
+	font-size: 18px;
+	font-style: italic;
+}
+.world .actionbar a div i {
+	font-size: 15px;
+}
