@@ -1,0 +1,21 @@
+services:
+  http-prod:
+    image: zombiegame-http-prod
+    platform: linux/amd64
+    build:
+      dockerfile: http/Dockerfile
+      target: ${DOCKER_TARGET:-production}
+    profiles:
+      - prod
+  http-dev:
+    image: zombiegame-http-dev
+    container_name: zombiegame-http-dev
+    ports:
+      - "8243:80"
+    volumes:
+      - ./webroot/:/var/www/html/
+    build:
+      dockerfile: http/Dockerfile
+      target: ${DOCKER_TARGET:-development}
+    profiles:
+      - dev

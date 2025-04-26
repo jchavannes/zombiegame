@@ -1,9 +1,16 @@
 # Zombiegame
 
-To run, execute:
-```bash
-$ ./http/server.sh
-```
-Visit [http://localhost:8243/](http://localhost:8243/).
+A game fighting zombies.
 
-**Prerequisites**: Docker installed, port 8243 open
+Demo: [http://zombiegame.noobsonly.com](http://zombiegame.noobsonly.com)
+
+## Dev
+```sh
+# Start dev (detached)
+docker-compose --profile dev up -d
+
+# Stop dev
+docker-compose --profile dev down
+```
+
+Visit [http://localhost:8243](http://localhost:8243)
