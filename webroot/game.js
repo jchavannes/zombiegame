@@ -192,10 +192,16 @@ var GAME = new (function() {
 				if (time < 200) time = 200;
 			} else {
 				if (!(time >= 0)) time = self.pathSpeed;
-				$('.zombie#'+self.id+'').stop(true, false).animate({'left':self.Path[self.pathId].x, 'top':self.Path[self.pathId].y}, 
-					time, "linear", function() {
+				var zombie = $('.zombie#'+self.id+'').stop(true, false);
+				var position = {'left':self.Path[self.pathId].x, 'top':self.Path[self.pathId].y};
+				if (time === 0) {
+					// Zero-length animations don't apply synchronously, so place the zombie directly
+					zombie.css(position);
+				} else {
+					zombie.animate(position, time, "linear", function() {
 						$('.zombie#'+self.id+' .body').attr({'data-face':"0"});
 					});
+				}
 				$('.zombie#'+self.id+' .body').attr({'data-face':self.Path[self.pathId].face});
 				self.pathId++; if(self.pathId >= self.Path.length) self.pathId = 0;
 				if (time > 0) time += self.pathDelay;
